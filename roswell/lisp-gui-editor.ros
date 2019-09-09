@@ -1,0 +1,37 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+(defpackage #:lisp-gui-editor/roswell/lisp-gui-editor.ros
+  (:use #:cl))
+(in-package #:lisp-gui-editor/roswell/lisp-gui-editor.ros)
+
+(ql:quickload '(:lisp-gui-editor) :silent t)
+
+(defun print-usage ()
+  (format *error-output* "~&Usage: lisp-gui-editor command [option...]
+Commands:
+  new APP_PATH [option...]
+"))
+
+(defun command-new (path &rest options)
+  (declare (ignore options))
+  (let ((args nil)
+        (path (uiop:ensure-directory-pathname path)))
+    (apply #'lisp-gui-editor:make-project path args)
+
+    (format t "~&$ qlot install~%")
+    (uiop:run-program (format nil "cd '~A' && qlot install" path)
+                      :output *standard-output*
+                      :error-output *error-output*)))
+
+(defun main (&optional command &rest argv)
+  (cond
+    ((equal command "new")
+     (unless (first argv)
+       (print-usage)
+       (uiop:quit -1))
+     (apply #'command-new argv))
+    (t (print-usage))))
