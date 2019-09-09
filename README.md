@@ -1,6 +1,10 @@
 # lisp-gui-editor
 
+Editor for easily creating GUI applications in Common Lisp
+
 # Description
+
+Supports GUI application development using Common Lisp and GTK3
 
 # Requirement
 
