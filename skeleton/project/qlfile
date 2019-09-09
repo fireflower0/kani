@@ -1,1 +1,1 @@
-git cl-cffi-gtk https://github.com/crategus/cl-cffi-gtk
+;; Write the library to install
