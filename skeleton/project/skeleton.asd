@@ -4,7 +4,8 @@
   :author "<% @var author %>"
   :license "<% @var license %>"
   :description "<% @var description %>"
-  :depends-on ("cl-cffi-gtk"
+  :depends-on ("cffi"
+               "cl-cffi-gtk"
                "<% @var name %>/boot"
                "cl-syntax-annot"))
 
