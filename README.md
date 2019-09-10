@@ -59,6 +59,12 @@ Edit `~/.lem/init.lisp`
   (lem-lisp-mode:run-slime (lem-lisp-mode::get-lisp-command :prefix "qlot exec ")))
 ```
 
+# Installation
+
+```
+$ ros install fireflower0/gecl-gtk3
+```
+
 # Usage
 
 ## Make project
