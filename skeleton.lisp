@@ -1,11 +1,11 @@
-(defpackage #:lisp-gui-editor/skeleton
+(defpackage #:gecl-gtk3/skeleton
   (:use #:cl)
   (:import-from #:cl-project)
   (:export #:make-project))
-(in-package #:lisp-gui-editor/skeleton)
+(in-package #:gecl-gtk3/skeleton)
 
 (defvar *skeleton-directory*
-  (asdf:system-relative-pathname :lisp-gui-editor #P"skeleton/project/"))
+  (asdf:system-relative-pathname :gecl-gtk3 #P"skeleton/project/"))
 
 (defun make-project (path
                      &rest params

@@ -1,10 +1,10 @@
-# lisp-gui-editor
+# gecl-gtk3
 
-Editor for easily creating GUI applications in Common Lisp
+Gui editor for Common Lisp using GTK3
 
 # Description
 
-Supports GUI application development using Common Lisp and GTK3
+Gui editor for Common Lisp using GTK3
 
 # Requirement
 
@@ -64,7 +64,7 @@ Edit `~/.lem/init.lisp`
 ## Make project
 
 ```
-lisp-gui-editor new <project name>
+$ gecl-gtk3 new <project name>
 ```
 
 ## Edit program

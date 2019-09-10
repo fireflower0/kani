@@ -4,14 +4,14 @@
 exec ros -Q -- $0 "$@"
 |#
 
-(defpackage #:lisp-gui-editor/roswell/lisp-gui-editor.ros
+(defpackage #:gecl-gtk3/roswell/gecl-gtk3.ros
   (:use #:cl))
-(in-package #:lisp-gui-editor/roswell/lisp-gui-editor.ros)
+(in-package #:gecl-gtk3/roswell/gecl-gtk3.ros)
 
-(ql:quickload '(:lisp-gui-editor) :silent t)
+(ql:quickload '(:gecl-gtk3) :silent t)
 
 (defun print-usage ()
-  (format *error-output* "~&Usage: lisp-gui-editor command [option...]
+  (format *error-output* "~&Usage: gecl-gtk3 command [option...]
 Commands:
   new APP_PATH [option...]
 "))
@@ -20,7 +20,7 @@ Commands:
   (declare (ignore options))
   (let ((args nil)
         (path (uiop:ensure-directory-pathname path)))
-    (apply #'lisp-gui-editor:make-project path args)
+    (apply #'gecl-gtk3:make-project path args)
 
     (format t "~&$ qlot install~%")
     (uiop:run-program (format nil "cd '~A' && qlot install" path)

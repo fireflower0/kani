@@ -1,7 +1,7 @@
-(defsystem "lisp-gui-editor"
+(defsystem "gecl-gtk3"
     :class :package-inferred-system
     :version "0.2.0"
     :author ""
     :license "Mit"
     :description ""
-    :depends-on ("lisp-gui-editor/package"))
+    :depends-on ("gecl-gtk3/package"))
