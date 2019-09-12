@@ -79,11 +79,23 @@ Edit `app.lisp`
 
 ## Run program
 
+The program can be run in two ways.
+
+### Slime REPL
+
 Run REPL `M-x slime-qlot-exec`
 
 ```
 (ql:quickload :<project name>)
 (<project name>:start)
+```
+
+### Roswell Script
+
+Can also use Roswell Script as follows
+
+```
+$ qlot exec ros roswell/<project name>.ros
 ```
 
 # Author
