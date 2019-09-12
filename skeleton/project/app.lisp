@@ -7,7 +7,10 @@
 
 (defun main (&rest args)
   (let (;; Create widget
-        (window (create-window "Hello, world!" 640 480)))
+        (window (create-window :type :toplevel
+                               :title "Hello, world!"
+                               :default-width 640
+                               :default-height 480)))
     (gtk:within-main-loop
      ;; Event
      (destroy-window window)
