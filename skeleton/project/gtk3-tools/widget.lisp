@@ -18,19 +18,19 @@
                         (focus-visible t)
                         (gravity :north-west)
                         (has-resize-grip nil)
-                        (has-toplevel-focus nil)
+                        ;; (has-toplevel-focus nil) is not writable
                         (hide-titlebar-when-maximized nil)
                         (icon nil)
                         (icon-name "")
-                        (is-active nil)
-                        (is-maximized nil)
+                        ;; (is-active nil) is not writable
+                        ;; (is-maximized nil) is not writable
                         (mnemonics-visible t)
                         (modal nil)
                         (opacity 1)
                         (resizable t)
-                        (resize-grip-visible nil)
+                        ;; (resize-grip-visible nil) is not writable
                         (role "")
-                        (screen nil)
+                        ;; (screen nil)
                         (skip-pager-hint nil)
                         (skip-taskbar-hint nil)
                         (startup-id "")
@@ -53,19 +53,19 @@
                  :focus-visible focus-visible
                  :gravity gravity
                  :has-resize-grip has-resize-grip
-                 :has-toplevel-focus has-toplevel-focus
+                 ;; :has-toplevel-focus has-toplevel-focus
                  :hide-titlebar-when-maximized hide-titlebar-when-maximized
                  :icon icon
                  :icon-name icon-name
-                 :is-active is-active
-                 :is-maximized is-maximized
+                 ;; :is-active is-active
+                 ;; :is-maximized is-maximized
                  :mnemonics-visible mnemonics-visible
                  :modal modal
                  :opacity opacity
                  :resizable resizable
-                 :resize-grip-visible resize-grip-visible
+                 ;; :resize-grip-visible resize-grip-visible
                  :role role
-                 :screen screen
+                 ;; :screen screen
                  :skip-pager-hint skip-pager-hint
                  :skip-taskbar-hint skip-taskbar-hint
                  :startup-id startup-id
