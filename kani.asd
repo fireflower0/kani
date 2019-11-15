@@ -1,7 +1,7 @@
-(defsystem "gecl-gtk3"
+(defsystem "kani"
     :class :package-inferred-system
     :version "0.2.0"
     :author ""
     :license "Mit"
     :description ""
-    :depends-on ("gecl-gtk3/package"))
+    :depends-on ("kani/package"))

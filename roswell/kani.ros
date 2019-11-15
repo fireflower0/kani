@@ -4,31 +4,31 @@
 exec ros -Q -- $0 "$@"
 |#
 
-(defpackage #:gecl-gtk3/roswell/gecl-gtk3.ros
+(defpackage #:kani/roswell/kani.ros
   (:use #:cl))
-(in-package #:gecl-gtk3/roswell/gecl-gtk3.ros)
+(in-package #:kani/roswell/kani.ros)
 
-(ql:quickload '(:gecl-gtk3) :silent t)
+(ql:quickload '(:kani) :silent t)
 
-(defconstant +print-version+ "gecl-gtk3 version 0.0.1~%")
+(defconstant +print-version+ "kani version 0.0.1~%")
 (defconstant +print-usage+
 "~A
 Gui editor for Common Lisp using GTK3
 
-Usage: gecl-gtk3 new [project name]
+Usage: kani new [project name]
 
 Command:
   new <project name> : Generate a project
 
 Options:
-  -v, --version   print gecl-gtk3 version
+  -v, --version   print kani version
 ")
 
 (defun command-new (path &rest options)
   (declare (ignore options))
   (let ((args nil)
         (path (uiop:ensure-directory-pathname path)))
-    (apply #'gecl-gtk3:make-project path args)
+    (apply #'kani:make-project path args)
 
     (format t "~&$ qlot install~%")
     (uiop:run-program (format nil "cd '~A' && qlot install" path)

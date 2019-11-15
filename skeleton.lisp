@@ -1,11 +1,11 @@
-(defpackage #:gecl-gtk3/skeleton
+(defpackage #:kani/skeleton
   (:use #:cl)
   (:import-from #:cl-project)
   (:export #:make-project))
-(in-package #:gecl-gtk3/skeleton)
+(in-package #:kani/skeleton)
 
 (defvar *skeleton-directory*
-  (asdf:system-relative-pathname :gecl-gtk3 #P"skeleton/project/"))
+  (asdf:system-relative-pathname :kani #P"skeleton/project/"))
 
 (defun make-project (path
                      &rest params

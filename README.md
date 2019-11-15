@@ -1,18 +1,14 @@
-# gecl-gtk3
+# Kani
 
-Gui editor for Common Lisp using GTK3
+Framework that supports GUI application development using GTK3 in Common Lisp.
 
-# Description
-
-Gui editor for Common Lisp using GTK3
-
-# Requirement
+## Requirement
 
 * [GTK](https://www.gtk.org/)
 * [Roswell](https://github.com/roswell/roswell)
 * [Qlot](https://github.com/fukamachi/qlot)
 
-# Preparation
+## Preparation
 
 ### Install GTK3
 
@@ -20,21 +16,21 @@ Gui editor for Common Lisp using GTK3
 $ sudo apt install libgtk-3-dev
 ```
 
-## Install Roswell
+### Install Roswell
 
 Install with reference to [here](https://github.com/roswell/roswell#installation-dependency--usage)
 
-## Install Qlot
+### Install Qlot
 
 ```
 $ ros install qlot
 ```
 
-## Setting Text Editor
+### Setting Text Editor
 
 Assume that you use Emacs or [Lem](https://github.com/cxxxr/lem)
 
-### Emacs
+#### Emacs
 
 Edit `~/.emacs.d/init.el`
 
@@ -48,7 +44,7 @@ Edit `~/.emacs.d/init.el`
                :env (list (concat "PATH=" (mapconcat 'identity exec-path ":")))))
 ```
 
-### Lem
+#### Lem
 
 Edit `~/.lem/init.lisp`
 
@@ -59,29 +55,29 @@ Edit `~/.lem/init.lisp`
   (lem-lisp-mode:run-slime (lem-lisp-mode::get-lisp-command :prefix "qlot exec ")))
 ```
 
-# Installation
+## Installation
 
 ```
-$ ros install fireflower0/gecl-gtk3
+$ ros install fireflower0/kani
 ```
 
-# Usage
+## Usage
 
-## Make project
+### Make project
 
 ```
-$ gecl-gtk3 new <project name>
+$ kani new <project name>
 ```
 
-## Edit program
+### Edit program
 
 Edit `app.lisp`
 
-## Run program
+### Run program
 
 The program can be run in two ways.
 
-### Slime REPL
+#### Slime REPL
 
 Run REPL `M-x slime-qlot-exec`
 
@@ -90,7 +86,7 @@ Run REPL `M-x slime-qlot-exec`
 (<project name>:start)
 ```
 
-### Roswell Script
+#### Roswell Script
 
 Can also use Roswell Script as follows
 
@@ -98,10 +94,10 @@ Can also use Roswell Script as follows
 $ qlot exec ros roswell/<project name>.ros
 ```
 
-# Author
+## Author
 
 fireflower0
 
-# License
+## License
 
 MIT
