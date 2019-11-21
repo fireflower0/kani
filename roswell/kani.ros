@@ -13,7 +13,7 @@ exec ros -Q -- $0 "$@"
 (defconstant +print-version+ "kani version 0.0.1~%")
 (defconstant +print-usage+
 "~A
-Gui editor for Common Lisp using GTK3
+Framework that supports GUI application development using GTK3 in Common Lisp
 
 Usage: kani new [project name]
 
