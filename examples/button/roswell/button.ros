@@ -1,0 +1,17 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+(uiop:define-package #:button/roswell/button.ros
+  (:use #:cl))
+(in-package #:button/roswell/button.ros)
+
+(ql:quickload '(:button) :silent t)
+
+(defun main (&rest argv)
+  (format t "Start program~%")
+  (button:start argv)
+  (format t "Press Enter to exit the program~%")
+  (read-line))
