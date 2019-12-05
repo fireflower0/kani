@@ -1,0 +1,17 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+(uiop:define-package #:packing-boxes/roswell/packing-boxes.ros
+  (:use #:cl))
+(in-package #:packing-boxes/roswell/packing-boxes.ros)
+
+(ql:quickload '(:packing-boxes) :silent t)
+
+(defun main (&rest argv)
+  (format t "Start program~%")
+  (packing-boxes:start argv)
+  (format t "Press Enter to exit the program~%")
+  (read-line))
