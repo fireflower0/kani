@@ -16,5 +16,6 @@
 *.wx64fsl
 *.wx32fsl
 
+qlfile.lock
 quicklisp/
 .qlot/
