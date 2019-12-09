@@ -1,0 +1,17 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+(uiop:define-package #:check-radio-button/roswell/check-radio-button.ros
+  (:use #:cl))
+(in-package #:check-radio-button/roswell/check-radio-button.ros)
+
+(ql:quickload '(:check-radio-button) :silent t)
+
+(defun main (&rest argv)
+  (format t "Start program~%")
+  (check-radio-button:start argv)
+  (format t "Press Enter to exit the program~%")
+  (read-line))
