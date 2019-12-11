@@ -1,0 +1,17 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+(uiop:define-package #:creating-menus-by-hand/roswell/creating-menus-by-hand.ros
+  (:use #:cl))
+(in-package #:creating-menus-by-hand/roswell/creating-menus-by-hand.ros)
+
+(ql:quickload '(:creating-menus-by-hand) :silent t)
+
+(defun main (&rest argv)
+  (format t "Start program~%")
+  (creating-menus-by-hand:start argv)
+  (format t "Press Enter to exit the program~%")
+  (read-line))
