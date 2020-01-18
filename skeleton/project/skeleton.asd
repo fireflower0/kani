@@ -6,6 +6,8 @@
   :description "<% @var description %>"
   :depends-on ("cl-cffi-gtk"
                "<% @var name %>/boot"
-               "cl-syntax-annot"))
+               "cl-syntax-annot"
+               "envy"
+               "mito"))
 
 (register-system-packages "<% @var name %>/boot" '(#:<% @var name %>))
