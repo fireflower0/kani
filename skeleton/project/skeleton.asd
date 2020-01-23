@@ -4,10 +4,11 @@
   :author "<% @var author %>"
   :license "<% @var license %>"
   :description "<% @var description %>"
-  :depends-on ("cl-cffi-gtk"
-               "<% @var name %>/boot"
+  :depends-on ("envy"
+               "mito"
+               "sxql"
+               "cl-cffi-gtk"
                "cl-syntax-annot"
-               "envy"
-               "mito"))
+               "<% @var name %>/boot"))
 
 (register-system-packages "<% @var name %>/boot" '(#:<% @var name %>))
