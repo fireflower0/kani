@@ -1,0 +1,17 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+
+(uiop:define-package #:tree-view/roswell/tree-view.ros
+  (:use #:cl))
+(in-package #:tree-view/roswell/tree-view.ros)
+
+(ql:quickload '(:tree-view) :silent t)
+
+(defun main (&rest argv)
+  (format t "Start program~%")
+  (tree-view:start argv)
+  (format t "Press Enter to exit the program~%")
+  (read-line))
