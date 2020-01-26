@@ -1,6 +1,6 @@
 (uiop:define-package #:<% @var name %>/db
   (:use #:cl
-        #:db-test/config)
+        #:<% @var name %>/config)
   (:import-from #:mito)
   (:export #:db
            #:with-connection))
