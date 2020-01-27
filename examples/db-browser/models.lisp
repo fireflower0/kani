@@ -7,7 +7,8 @@
            #:pg-lang-name
            #:pg-lang-year
            #:create-pg-lang-table
-           #:add-pg-lang-column))
+           #:add-pg-lang-column
+           #:delete-pg-lang-column))
 (in-package #:db-browser/models)
 
 (defclass pg-lang ()
@@ -30,3 +31,7 @@
 (defun add-pg-lang-column (name year)
   (with-connection (db)
     (mito:create-dao 'pg-lang :name name :year year)))
+
+(defun delete-pg-lang-column (id)
+  (with-connection (db)
+    (mito:delete-by-values 'pg-lang :id id)))
