@@ -8,10 +8,11 @@
 
 (defun create-and-fill-model ()
   (let ((model   (make-instance 'gtk:gtk-list-store
-                                :column-types '("gchararray" "guint")))
+                                :column-types '("guint" "gchararray" "guint")))
         (pg-lang (select-dao 'pg-lang)))
     (dolist (n pg-lang)
       (gtk:gtk-list-store-set model (gtk:gtk-list-store-append model)
+                              (object-id n)
                               (pg-lang-name n)
                               (pg-lang-year n)))
     model))
@@ -25,8 +26,9 @@
   (let* ((model (create-and-fill-model))
          (view  (make-instance 'gtk:gtk-tree-view :model model)))
     ;; セルのレンダラーを作成
-    (create-header view "Name" 0)
-    (create-header view "Year" 1)
+    (create-header view "ID" 0)
+    (create-header view "Name" 1)
+    (create-header view "Year" 2)
     view))
 
 (defun main (&rest args)
