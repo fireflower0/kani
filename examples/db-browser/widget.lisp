@@ -1,6 +1,7 @@
 (defpackage #:db-browser/widget
   (:use #:cl)
   (:export #:create-main-window
+           #:create-table
            #:*main-window-width*
            #:*main-window-height*))
 (in-package #:db-browser/widget)
@@ -17,3 +18,9 @@
                  :border-width   *main-window-border-width*
                  :default-width  *main-window-width*
                  :default-height *main-window-height*))
+
+(defun create-table ()
+  (make-instance 'gtk:gtk-table
+                 :n-columns 2
+                 :n-rows 3
+                 :homogeneous t))

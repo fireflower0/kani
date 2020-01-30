@@ -35,10 +35,32 @@
   (create-pg-lang-table)
   (gtk:within-main-loop
     (let ((window (create-main-window))
-          (view   (create-view-and-model)))
+          (table  (create-table))
+          (view   (create-view-and-model))
+          (quit   (make-instance 'gtk:gtk-button :label "Quit")))
+
       (gobject:g-signal-connect window "destroy"
                                 (lambda (widget)
                                   (declare (ignore widget))
                                   (gtk:leave-gtk-main)))
-      (gtk:gtk-container-add window view)
+
+      (gobject:g-signal-connect quit "clicked"
+                                (lambda (widget)
+                                  (declare (ignore widget))
+                                  (gtk:gtk-widget-destroy window)))
+
+      ;; パッキングテーブル
+      ;;  0          1          2
+      ;; 0+----------+----------+
+      ;;  |          |          |
+      ;; 1+----------+----------+
+      ;;  |          |          |
+      ;; 2+----------+----------+
+      ;;  |          |          |
+      ;; 3+----------+----------+
+      (gtk:gtk-table-attach table view 0 2 0 2)
+      (gtk:gtk-table-attach table quit 0 2 2 3)
+
+      (gtk:gtk-container-add window table)
+
       (gtk:gtk-widget-show-all window))))
