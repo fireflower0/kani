@@ -58,8 +58,8 @@
       ;; 2+----------+----------+
       ;;  |          |          |
       ;; 3+----------+----------+
-      (gtk:gtk-table-attach table view 0 2 0 2)
-      (gtk:gtk-table-attach table quit 0 2 2 3)
+      (gtk:gtk-table-attach table view 0 2 0 3)
+      (gtk:gtk-table-attach table quit 0 2 3 4)
 
       (gtk:gtk-container-add window table)
 

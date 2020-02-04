@@ -22,5 +22,5 @@
 (defun create-table ()
   (make-instance 'gtk:gtk-table
                  :n-columns 2
-                 :n-rows 3
+                 :n-rows 4
                  :homogeneous t))
